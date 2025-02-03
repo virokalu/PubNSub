@@ -2,12 +2,12 @@ import socket
 import sys
 
 
-def start_server(port):
+def start_server(port_number):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(("0.0.0.0", port))
+    server_socket.bind(("0.0.0.0", port_number))
     server_socket.listen(5)
 
-    print(f"Server started on port {port}. Waiting for a connection...")
+    print(f"Server started on port {port_number}. Waiting for a connection...")
 
     conn, addr = server_socket.accept()
     print(f"Client connected from {addr}")
